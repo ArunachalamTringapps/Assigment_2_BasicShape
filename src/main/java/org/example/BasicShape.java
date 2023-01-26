@@ -11,7 +11,7 @@ class BasicShape {
     private final double s1;
     private final double s2;
     private final double radius;
-    public static final double pi = 3.14;
+    protected double pi = 3.14;
 
     public BasicShape(int type, double length, double breadth, double side1, double side2, double radius) {
         this.type=type;
