@@ -1,81 +1,70 @@
 package org.example;
 
-import java.util.Scanner;
-class BasicShape{
-    public double triangle,rectangle,circle;
-    public double lengthtri1,lengthtri2,lengthtri3;
-    public double lengthrect,widthrect;
-    public double radiuscircle;
-    public double breadthtri,heighttri;
-    Scanner sc=new Scanner(System.in);
-    BasicShape(int ch)
-    {
-        if(ch==1)
-        {
-            System.out.println("Enter your choice to perform area operation for the shapes?\n1.Area for Rectangle\n2.Area for Triangle\n3.Area for Circle\n");
-            int a=sc.nextInt();
-            this.areashapes(a);
-        }
-        else if(ch==2){
-            System.out.println("Enter your choice to perform Perimeter operation for the shapes?\n1.Perimeter for Rectangle\n2.Perimeter for Triangle\n3.Perimeter for Circle\n");
-            int b=sc.nextInt();
-            this.perimetershapes(b);
-        }
-        else{
-            System.out.println("Please Enter correct choice");
-        }
+import java.util.*;
+
+class BasicShape {
+    int type;
+    double ar, per, length, breadth, s1, s2, radius;
+    double pi = 3.14;
+
+    public BasicShape(int type, double length, double breadth, double side1, double side2, double radius) {
+        this.type=type;
+        this.length = length;
+        this.breadth = breadth;
+        this.s1 = side1;
+        this.s2 = side2;
+        this.radius = radius;
     }
-    void areashapes(int shape)
-    {
-        if(shape==1)
-        {
-            System.out.println("Enter the length and width of a Rectangle");
-            lengthrect=sc.nextDouble();
-            widthrect=sc.nextDouble();
-            rectangle=lengthrect*widthrect;
-            System.out.println("The Area of Rectangle is:"+rectangle);
+
+    double perimeter() {
+        if (type == 1) {
+            per = 2 * (length + breadth);
         }
-        if(shape==2){
-            System.out.println("Enter the breadth and height of a Triangle");
-            breadthtri=sc.nextDouble();
-            heighttri=sc.nextDouble();
-            triangle=(breadthtri*heighttri)/2;
-            System.out.println("The Area of Triangle is:"+triangle);
+        if (type == 2) {
+            per = breadth + s1 + s2;
         }
-        if(shape==3){
-            System.out.println("Enter the radius for a circle");
-            radiuscircle=sc.nextDouble();
-            circle=Math.PI*radiuscircle*radiuscircle;
-            System.out.println("The Area of Circle is:"+circle);
+        if (type == 3) {
+            per = 2 * pi * radius;
         }
+        return per;
     }
-    void perimetershapes(int shape){
-        if(shape==1){
-            System.out.println("Enter the length and width of a Rectangle");
-            lengthrect=sc.nextDouble();
-            double breadthrect=sc.nextDouble();
-            rectangle=2*(lengthrect+breadthrect);
-            System.out.println("The Perimeter of Rectangle is:"+rectangle);
+
+    double area() {
+        if (type == 1) {
+            ar = length * breadth;
         }
-        if(shape==2){
-            System.out.println("Enter the breadth and height of a Triangle");
-            lengthtri1=sc.nextDouble();
-            lengthtri2=sc.nextDouble();
-            lengthtri3=sc.nextDouble();
-            triangle=lengthtri1*lengthtri2*lengthtri3;
-            System.out.println("The Perimeter of Triangle is:"+triangle);
+        if (type == 2) {
+            ar = (breadth * length) / 2;
         }
-        if(shape==3){
-            System.out.println("Enter the radius for a circle");
-            radiuscircle=sc.nextDouble();
-            circle=2*Math.PI*radiuscircle;
-            System.out.println("The Perimeter of Circle is:"+circle);
+        if (type == 3) {
+            ar = pi * radius * radius;
         }
+        return ar;
     }
-    public static void main(String[] args){
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Which choice you want to choose? \n1.Area for shapes\n2.Perimeter for shapes\n");
-        int ch=sc.nextInt();
-        BasicShape s=new BasicShape(ch);
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Welcome guys");
+        System.out.println("choose one from below.");
+        System.out.println("1.Rectangle\n2.Triangle\n3.Circle");
+        System.out.println("Enter the shape type:");
+        int type = sc.nextInt();
+        System.out.println("Enter the length:");
+        double length = sc.nextFloat();
+        System.out.println("Enter the breadth:");
+        double breadth = sc.nextFloat();
+        System.out.println("Enter the side1:");
+        double side1 = sc.nextFloat();
+        System.out.println("Enter the side2:");
+        double side2 = sc.nextFloat();
+        System.out.println("Enter the radius:");
+        double radius = sc.nextFloat();
+
+        BasicShape bs = new BasicShape(type, length, breadth, side1, side2, radius);
+        System.out.println("The perimeter of the given shape is:" + bs.perimeter());
+        System.out.println("The area of the given shape is:" + bs.area());
+        System.out.println("Thanks for coming");
+        sc.close();
     }
+
 }
