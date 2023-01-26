@@ -4,8 +4,14 @@ import java.util.*;
 
 class BasicShape {
     int type;
-    double ar, per, length, breadth, s1, s2, radius;
-    double pi = 3.14;
+    private double ar;
+    private double per;
+    private final double length;
+    private final double breadth;
+    private final double s1;
+    private final double s2;
+    private final double radius;
+    private final double pi = 3.14;
 
     public BasicShape(int type, double length, double breadth, double side1, double side2, double radius) {
         this.type=type;
