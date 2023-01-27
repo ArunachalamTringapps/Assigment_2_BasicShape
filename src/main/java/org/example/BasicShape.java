@@ -79,9 +79,9 @@ class BasicShape {
 
 
         BasicShape bs = new BasicShape(type, length, breadth, side1, side2, radius);
-        l.log(Level.INFO,"The perimeter of the given shape is:" + bs.perimeter());
-        l.log(Level.INFO,"The area of the given shape is:" + bs.area());
-        l.log(Level.INFO,"Thanks for coming");
+        l.log(Level.INFO, () -> "The perimeter of the given shape is:" + bs.perimeter());
+        l.log(Level.INFO, () -> "The area of the given shape is:" + bs.area());
+        l.info("Thanks for coming");
         sc.close();
     }
 

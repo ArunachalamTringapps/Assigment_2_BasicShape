@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d7c774b-0d33-4277-9bcd-4309bc2136a6" name="Changes" comment="final changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6d7c774b-0d33-4277-9bcd-4309bc2136a6" name="Changes" comment="updated without code smell">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/BasicShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/BasicShape.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +35,6 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "C:/Users/Tringapps-User19/IdeaProjects/BaiscShape"
   }
 }]]></component>
@@ -77,13 +75,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674706929483</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="updated without code smell">
+      <created>1674820472636</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1674820472636</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="file changed" />
     <MESSAGE value="acces modifier updated" />
     <MESSAGE value="final changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="final changes" />
+    <MESSAGE value="updated without code smell" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated without code smell" />
   </component>
 </project>
