@@ -1,5 +1,5 @@
 package org.example;
-
+import java.util.logging.*;
 import java.util.*;
 
 class BasicShape {
@@ -49,11 +49,12 @@ class BasicShape {
     }
 
     public static void main(String[] args) {
+        Logger l=Logger.getLogger("com.api.jar");
         Scanner sc = new Scanner(System.in);
-        System.out.println("Welcome guys");
-        System.out.println("Enter your choice");
-        System.out.println("1.Rectangle\n2.Triangle\n3.Circle");
-        System.out.println("Enter the shape type:");
+        l.info("Welcome guys");
+        l.info("Enter your choice");
+       l.info("1.Rectangle\n2.Triangle\n3.Circle");
+        l.info("Enter the shape type:");
         int type = sc.nextInt();
         double radius=0;
         double length = 0;
@@ -61,26 +62,26 @@ class BasicShape {
         double side1=0;
         double side2=0;
         if(type==3){
-            System.out.println("Enter the radius:");
+            l.info("Enter the radius:");
             radius = sc.nextFloat();
         }
         else if (type==1 || type==2){
-            System.out.println("Enter the length:");
+            l.info("Enter the length:");
             length = sc.nextFloat();
-            System.out.println("Enter the breadth:");
+            l.info("Enter the breadth:");
             breadth = sc.nextFloat();
-            System.out.println("Enter the side1:");
+            l.info("Enter the side1:");
             side1 = sc.nextFloat();
-            System.out.println("Enter the side2:");
+            l.info("Enter the side2:");
             side2 = sc.nextFloat();
         }
 
 
 
         BasicShape bs = new BasicShape(type, length, breadth, side1, side2, radius);
-        System.out.println("The perimeter of the given shape is:" + bs.perimeter());
-        System.out.println("The area of the given shape is:" + bs.area());
-        System.out.println("Thanks for coming");
+        l.log(Level.INFO,"The perimeter of the given shape is:" + bs.perimeter());
+        l.log(Level.INFO,"The area of the given shape is:" + bs.area());
+        l.log(Level.INFO,"Thanks for coming");
         sc.close();
     }
 
