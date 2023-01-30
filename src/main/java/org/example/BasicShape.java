@@ -3,6 +3,8 @@ import java.util.logging.*;
 import java.util.*;
 
 class BasicShape {
+    static Logger l = Logger.getLogger("com.api.jar");
+    static Scanner sc = new Scanner(System.in);
     int type;
     private double ar;
     private double per;
@@ -49,40 +51,47 @@ class BasicShape {
     }
 
     public static void main(String[] args) {
-        Logger l=Logger.getLogger("com.api.jar");
-        Scanner sc = new Scanner(System.in);
-        l.info("Welcome guys");
-        l.info("Enter your choice");
-       l.info("1.Rectangle\n2.Triangle\n3.Circle");
-        l.info("Enter the shape type:");
-        int type = sc.nextInt();
-        double radius=0;
-        double length = 0;
-        double breadth=0;
-        double side1=0;
-        double side2=0;
-        if(type==3){
-            l.info("Enter the radius:");
-            radius = sc.nextFloat();
+        try {
+
+            l.info("Welcome guys");
+            l.info("Enter your choice");
+            l.info("1.Rectangle\n2.Triangle\n3.Circle");
+            l.info("Enter the shape type:");
+            int type = sc.nextInt();
+            double radius = 0;
+            double length = 0;
+            double breadth = 0;
+            double side1 = 0;
+            double side2 = 0;
+            if (type == 3) {
+                l.info("Enter the radius:");
+                radius = sc.nextFloat();
+            } else if (type == 1 || type == 2) {
+                l.info("Enter the length:");
+                length = sc.nextFloat();
+                l.info("Enter the breadth:");
+                breadth = sc.nextFloat();
+                l.info("Enter the side1:");
+                side1 = sc.nextFloat();
+                l.info("Enter the side2:");
+                side2 = sc.nextFloat();
+            }
+            BasicShape bs = new BasicShape(type, length, breadth, side1, side2, radius);
+            if(bs.perimeter()==0.0){
+                l.info("Enter the correct choice");
+            }
+            else {
+                l.log(Level.INFO, () -> "The perimeter of the given shape is:" + bs.perimeter());
+                l.log(Level.INFO, () -> "The area of the given shape is:" + bs.area());
+            }
+        }catch(Exception ex){
+            l.log(Level.INFO,()->"Error Occur:"+ex);
+
+        }finally {
+            l.info("Thanks for coming");
+            sc.close();
         }
-        else if (type==1 || type==2){
-            l.info("Enter the length:");
-            length = sc.nextFloat();
-            l.info("Enter the breadth:");
-            breadth = sc.nextFloat();
-            l.info("Enter the side1:");
-            side1 = sc.nextFloat();
-            l.info("Enter the side2:");
-            side2 = sc.nextFloat();
-        }
 
-
-
-        BasicShape bs = new BasicShape(type, length, breadth, side1, side2, radius);
-        l.log(Level.INFO, () -> "The perimeter of the given shape is:" + bs.perimeter());
-        l.log(Level.INFO, () -> "The area of the given shape is:" + bs.area());
-        l.info("Thanks for coming");
-        sc.close();
     }
 
 }
