@@ -51,7 +51,7 @@ class BasicShape {
     }
 
     public static void main(String[] args) {
-        try {
+
 
             l.info("Welcome guys");
             l.info("Enter your choice");
@@ -84,13 +84,7 @@ class BasicShape {
                 l.log(Level.INFO, () -> "The perimeter of the given shape is:" + bs.perimeter());
                 l.log(Level.INFO, () -> "The area of the given shape is:" + bs.area());
             }
-        }catch(Exception ex){
-            l.log(Level.INFO,()->"Error Occur:"+ex);
-
-        }finally {
-            l.info("Thanks for coming");
-            sc.close();
-        }
+        sc.close();
 
     }
 
