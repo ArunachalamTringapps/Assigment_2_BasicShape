@@ -3,7 +3,7 @@ import java.util.logging.*;
 import java.util.*;
 
 class BasicShape {
-    static Logger l = Logger.getLogger("com.api.jar");
+    static Logger l = Logger.getLogger(BasicShape.class.getName());
     static Scanner sc = new Scanner(System.in);
     int type;
     private double ar;
