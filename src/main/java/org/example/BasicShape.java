@@ -13,7 +13,7 @@ class BasicShape {
     private final double s1;
     private final double s2;
     private final double radius;
-    private static final double Pi = 3.14;
+    private static final double p = 3.14;
 
     public BasicShape(int type, double length, double breadth, double side1, double side2, double radius) {
         this.type=type;
@@ -32,7 +32,7 @@ class BasicShape {
             per = breadth + s1 + s2;
         }
         if (type == 3) {
-            per = 2 * Pi * radius;
+            per = 2 * p * radius;
         }
         return per;
     }
@@ -45,7 +45,7 @@ class BasicShape {
             ar = (breadth * length) / 2;
         }
         if (type == 3) {
-            ar = Pi * radius * radius;
+            ar = p * radius * radius;
         }
         return ar;
     }
